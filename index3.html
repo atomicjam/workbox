@@ -1,0 +1,30 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body class="green">
+    <p>Hello world! This is HTML5 Boilerplate.</p>
+    <ul>
+        <li><a href="index.html">index1</a></li>
+        <li><a href="index2.html">index2</a></li>
+        <li><a href="index3.html">index3</a></a></li>
+    </ul>
+    <script>
+        // Check that service workers are registered
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/serviceworker.js');
+            });
+        }
+    </script>
+</body>
+
+</html>
