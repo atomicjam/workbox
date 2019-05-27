@@ -1,7 +1,8 @@
 'use strict';
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
-console.log('Service Worker Registered');
-
+if (workbox) {
+    console.log('CLC - Service Worker (Registered)');
+}
 // Force development builds
 workbox.setConfig({
     debug: true
@@ -9,7 +10,7 @@ workbox.setConfig({
 
 // Setup cache details
 workbox.core.setCacheNameDetails({
-    prefix: 'clc',
+    prefix: 'clc-workbox',
     suffix: 'v1',
     precache: 'precache'
 });
@@ -65,7 +66,7 @@ workbox.routing.registerRoute(/\//,
     }) => {
         try {
             return await workbox.strategies.staleWhileRevalidate({
-                cacheName: 'cache-pages'
+                cacheName: 'page-cache'
             }).handle({
                 event
             });
